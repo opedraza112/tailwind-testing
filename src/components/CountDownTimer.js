@@ -32,7 +32,7 @@ function CountDownTimer() {
 
   Object.keys(timeLeft).forEach((interval) => {
     timerComponents.push(
-      <span className="w-16 h-16 flex flex-col items-center justify-center bg-blue-100">
+      <span className="w-16 h-16 flex flex-col items-center justify-center bg-blue-100" key={interval}>
         <dt className="text-2xl font-medium text-gray-600 truncate">{timeLeft[interval].toString().padStart(2, '0') || '00'}</dt>
         <dd className="mt-1 text-xs font-light text-gray-500">{interval}</dd>
       </span>

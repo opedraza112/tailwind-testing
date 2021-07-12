@@ -2,7 +2,7 @@ import React from 'react'
 
 function PageBanner() {
   return (
-    <div class="mt-8 lg:px-8 px-4 py-8 bg-gray-50">
+    <div className="mt-8 lg:px-8 px-4 py-8 bg-gray-50">
       <div className="container mx-auto overflow-hidden lg:grid md:grid-cols-5 md:gap-4">
         <div className="col-span-3 pt-8 w-9/12">
           <div className='text-left text-section'>
