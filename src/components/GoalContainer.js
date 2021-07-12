@@ -64,7 +64,7 @@ const GoalContainer = () => {
                     </div>
                   )}
                   {!item.completed && (
-                    <div className="mark w-8 h-8 rounded-full border-solid border bg-gray-50" onClick={() => toggleStatus(index)} />
+                    <div className="mark w-8 h-8 rounded-full shadow-inner border-solid border bg-gray-50" onClick={() => toggleStatus(index)} />
                   )}
                   <div className="pl-4 text-sm">Done it!</div>
                   <div className={`pl-4 pr-4 relative flex opacity-${opacity}`}>
