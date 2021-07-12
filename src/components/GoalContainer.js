@@ -1,17 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ProgressBar from './ProgressBar';
 
+const ST_LIST = [
+  { completed: true, text: 'You Implemented 3 Profit Accelerators 💰', xp: '10' },
+  { completed: true, text: 'You Implemented 5 Profit Accelerators! 💰 💰', xp: '20' },
+  { completed: false, text: 'You Implemented All 10 Profit Accelerators!! 💰 💰 💰', xp: '30' },
+];
+
 const GoalContainer = () => {
-  const statusList = [
-    { completed: true, text: 'You Implemented 3 Profit Accelerators 💰', xp: '10' },
-    { completed: true, text: 'You Implemented 5 Profit Accelerators! 💰💰', xp: '20' },
-    { completed: false, text: 'You Implemented All 10 Profit Accelerators!! 💰💰💰', xp: '30' },
-  ];
+  const [statusList, setStatusList] = useState(ST_LIST);
 
   const completedList = statusList.filter(item => item.completed);
 
+  const toggleStatus = (idx) => {
+    const copiedList = statusList.slice();
+    for (let i = 0; i < statusList.length; i++) {
+      if (i < idx) copiedList[i].completed = true;
+      else copiedList[i].completed = false;
+    }
+    if (!copiedList[idx].completed) copiedList[idx].completed = true;
+    setStatusList(copiedList);
+  }
+
   return (
-    <div class="mt-8 lg:px-8 px-4 py-8">
+    <div className="mt-8 lg:px-8 px-4 py-8">
       <div className="container mx-auto overflow-hidden text-left">
         <div className='font-bold'>YOUR 10 DAY GOALS 💪🏼</div>
         <div>We've suggested a few goals here for you. Feel free to customize to make them more inspiring! Check them off when complete to claim your points!</div>
@@ -22,7 +34,7 @@ const GoalContainer = () => {
             const opacity = item.completed ? 100 : 30;
 
             return (
-            <div className={`text-left ${index !== 0 && 'lg:pl-4'}`}>
+            <div className={`text-left ${index !== 0 && 'lg:pl-4'}`} key={index}>
               <div className="flex items-start justify-between">
                 <div className="flex items-center w-10/12">
                   <img
@@ -45,14 +57,14 @@ const GoalContainer = () => {
               <div className='mt-4 mb-4'>
                 <div className="flex items-center">
                   {item.completed && (
-                    <div className="mark w-8 h-8 rounded-full bg-green-400 flex items-center justify-center">
+                    <div className="mark w-8 h-8 rounded-full bg-green-400 flex items-center justify-center" onClick={() => toggleStatus(index)}>
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="white">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
                   )}
                   {!item.completed && (
-                    <div className="mark w-8 h-8 rounded-full border-solid border bg-gray-50" />
+                    <div className="mark w-8 h-8 rounded-full border-solid border bg-gray-50" onClick={() => toggleStatus(index)} />
                   )}
                   <div className="pl-4 text-sm">Done it!</div>
                   <div className={`pl-4 pr-4 relative flex opacity-${opacity}`}>
