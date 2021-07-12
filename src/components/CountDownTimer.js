@@ -31,22 +31,18 @@ function CountDownTimer() {
   const timerComponents = [];
 
   Object.keys(timeLeft).forEach((interval) => {
-    if (!timeLeft[interval]) {
-      return;
-    }
-
     timerComponents.push(
       <span className="w-16 h-16 flex flex-col items-center justify-center bg-blue-100">
-        <dt className="text-2xl font-medium text-gray-600 truncate">{timeLeft[interval].toString().padStart(2, '0')}</dt>
+        <dt className="text-2xl font-medium text-gray-600 truncate">{timeLeft[interval].toString().padStart(2, '0') || '00'}</dt>
         <dd className="mt-1 text-xs font-light text-gray-500">{interval}</dd>
       </span>
     );
   });
-  
+
   return (
     <dt className='mt-12 ml-12 flex items-center'>
       <span className='mr-12'>Your mission ends in:</span>
-      <dl className="space-x-6 flex justify-center">
+      <dl className="space-x-3 flex justify-center">
         {timerComponents.length ? timerComponents : <span>Time's up!</span>}
       </dl>
     </dt>
