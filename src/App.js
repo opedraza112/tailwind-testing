@@ -2,6 +2,7 @@ import './App.css';
 import CountDownTimer from './components/CountDownTimer';
 import PageBanner from './components/PageBanner';
 import GoalContainer from './components/GoalContainer';
+import TrainingList from './components/TrainingList';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <CountDownTimer />
       <PageBanner />
       <GoalContainer />
+      <TrainingList />
     </div>
   );
 }
