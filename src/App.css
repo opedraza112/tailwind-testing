@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+
+.text-section {
+  position: relative;
+}
+
+.heading-title:after {
+  content: "";
+  position: absolute;
+  bottom: -17px;
+  left: 0;
+  display: block;
+  width: 61px;
+  height: 3px;
+  background: #c4e0d5;
+}

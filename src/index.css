@@ -15,18 +15,3 @@ code {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.text-section {
-  position: relative;
-}
-
-.text-section .heading-title::after {
-  content: "";
-  position: absolute;
-  bottom: -17px;
-  left: 0;
-  display: block;
-  width: 61px;
-  height: 3px;
-  background: #c4e0d5;
-}
