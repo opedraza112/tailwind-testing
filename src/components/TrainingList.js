@@ -46,7 +46,7 @@ const TrainingList = () => {
               <div className="col-span-3 text-left">
                 <div className="divide-x divide-black text-sm">
                   <span className="mr-2">Training {item.training_number}</span>
-                  <span className={`pl-3 ${STATUS_LIST[item.status].color}`}>{STATUS_LIST[item.status].text}</span>
+                  <span className={`pl-3 font-semibold ${STATUS_LIST[item.status].color}`}>{STATUS_LIST[item.status].text}</span>
                 </div>
                 <div className="text-xl font-semibold mt-1">
                   {item.title}
@@ -63,8 +63,8 @@ const TrainingList = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-span-1">
-                <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-4 rounded">
+              <div className="col-span-1 text-right">
+                <button class="bg-gray-200 hover:bg-gray-400 text-gray-800 py-2 px-4 rounded">
                   View
                 </button>
               </div>

@@ -9,11 +9,11 @@ function PageBanner() {
             <h2 className="text-5xl font-extrabold text-white sm:text-4xl heading-title">
               <span className="block text-gray-700">Your Mission 👋</span>
             </h2>
-            <p className="mt-4 text-lg text-black">
-              Join us for 10 days to create the kind of online course that your students will get kind of addicted to -- 
-              but in a good way -- that makes it up to 16 times more profitable than the norm!
-            </p>
           </div>
+          <p className="mt-8 text-lg text-black text-left">
+            Join us for 10 days to create the kind of online course that your students will get kind of addicted to -- 
+            but in a good way -- that makes it up to 16 times more profitable than the norm!
+          </p>
         </div>
         <div className="col-span-2 mt-4 lg:mt-0">
           <img
